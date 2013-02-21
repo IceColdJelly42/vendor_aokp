@@ -26,7 +26,7 @@ export CCACHE_DIR=/$HOME/.ccache
 prebuilts/misc/linux-x86/ccache/ccache -M 40G
 
 source build/envsetup.sh && lunch aokp_endeavoru-userdebug
-schedtool -B -n 1 -e ionice -n 1 /usr/bin/time -f "%U\t user\n%S\t system\n%E\t real"  make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` bacon 2>&1
+schedtool -B -n 1 -e ionice -n 1 /usr/bin/time -f "User\t%U\nSys\t%S\nReal\t%E\nCPU\t%P"  make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` bacon 2>&1
 
 if [ "$1" != "" ]; then
     ZIP=`find ${ANDROID_PRODUCT_OUT}/ . -maxdepth 1 -name '*.zip' -mtime -1 | xargs stat --format '%n' | sort -nr | cut -d: -f2- | head -1`
