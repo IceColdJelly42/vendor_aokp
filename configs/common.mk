@@ -17,7 +17,10 @@ PRODUCT_PACKAGES += \
     SwagPapers \
     Torch \
     UnicornPorn \
-    LockClock
+    LockClock \
+    XposedInstaller \
+    XposedNetflixWorkaround \
+    XposedPerAppSettings 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
