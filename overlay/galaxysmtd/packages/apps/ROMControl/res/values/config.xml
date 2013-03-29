@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Whether device has hardware buttons -->
+    <bool name="has_hardware_buttons">true</bool>
+
+    <!-- Whether device has led brightness feature -->
+    <bool name="has_led_brightness_feature">true</bool>
+
+</resources>
