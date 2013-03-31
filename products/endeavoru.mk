@@ -11,6 +11,9 @@ PRODUCT_RELEASE_NAME := endeavoru
 $(call inherit-product, vendor/aokp/configs/common.mk)
 $(call inherit-product, vendor/aokp/configs/common_versions.mk)
 
+# PA OVERLAY_TARGET
+OVERLAY_TARGET := pa_xhdpi
+
 # Device naming
 PRODUCT_DEVICE := endeavoru
 PRODUCT_NAME := aokp_endeavoru

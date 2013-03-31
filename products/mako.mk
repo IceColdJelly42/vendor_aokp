@@ -10,6 +10,9 @@ $(call inherit-product, vendor/aokp/configs/gsm.mk)
 # Mako Overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/mako
 
+# PA OVERLAY_TARGET
+OVERLAY_TARGET := pa_xhdpi
+
 # Setup device specific product configuration
 PRODUCT_NAME := aokp_mako
 PRODUCT_BRAND := google

@@ -10,6 +10,9 @@ $(call inherit-product, vendor/aokp/configs/gsm.mk)
 # galaxysmtd Overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/galaxysmtd
 
+# PA OVERLAY_TARGET
+OVERLAY_TARGET := pa_hdpi
+
 # Setup device specific product configuration
 PRODUCT_NAME := aokp_galaxysmtd
 PRODUCT_BRAND := samsung
