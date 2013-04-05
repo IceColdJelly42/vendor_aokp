@@ -20,7 +20,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     XposedInstaller \
     XposedNetflixWorkaround \
-    XposedPerAppSettings 
+    XposedPerAppSettings \
     Torch
 
 # PA Packages
@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
 
 # RootBox build.prop tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.pa.family=$(OVERLAY_TARGET) \
+    ro.pa.family=$(OVERLAY_TARGET)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -49,19 +49,19 @@ PRODUCT_COPY_FILES += \
     vendor/aokp/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf
 
 # ParanoidAndroid Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/prebuilt/preferences/$(TARGET_PRODUCT)
+PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/prebuilt/preferences/$(TARGET_PRODUCT)
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
-    PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/$(OVERLAY_TARGET)
+    PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/$(OVERLAY_TARGET)
     PA_CONF_SOURCE := $(OVERLAY_TARGET)
 else
     PA_CONF_SOURCE := $(TARGET_PRODUCT)
 endif
 
 PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
-    vendor/rootbox/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
+    vendor/aokp/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
+    vendor/aokp/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
 
 # init.d
 PRODUCT_COPY_FILES += \
