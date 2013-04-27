@@ -71,6 +71,12 @@ PRODUCT_PACKAGES += \
     sftp \
     scp
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/aokp/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/aokp/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/aokp/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh 
+
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=Scarabaeus.ogg \
