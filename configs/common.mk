@@ -75,7 +75,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/aokp/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/aokp/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/aokp/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh 
+    vendor/aokp/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
+    vendor/aokp/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -5,21 +5,7 @@
 
 export C=/tmp/backupdir
 export S=/system
-export V=9
-
-# Mount /system if it is not already mounted
-mount_system() {
-if [ ! -f "$S/build.prop" ]; then
-mount $S
-fi
-}
-
-# Unmount /system unless it is already unmounted
-umount_system() {
-if [ -f "$S/build.prop" ]; then
-umount $S
-fi
-}
+export V=10.1
 
 # Preserve /system/addon.d in /tmp/addon.d
 preserve_addon_d() {
@@ -34,13 +20,23 @@ restore_addon_d() {
   rm -rf /tmp/addon.d/
 }
 
-# Proceed only if /system is the expected major version
+# Proceed only if /system is the expected major and minor version
 check_prereq() {
 if ( ! grep -q "^ro.cm.version=$V.*" /system/build.prop ); then
-echo "Not backing up files from incompatible version."
-  umount_system
+  echo "Not backing up files from incompatible version: $V"
   exit 127
 fi
+}
+
+check_blacklist() {
+  if [ -f /system/addon.d/blacklist ];then
+      ## Discard any known bad backup scripts
+      cd /$1/addon.d/
+      for f in *sh; do
+          s=$(md5sum $f | awk {'print $1'})
+          grep -q $s /system/addon.d/blacklist && rm -f $f
+      done
+  fi
 }
 
 # Execute /system/addon.d/*.sh scripts with $1 parameter
@@ -53,22 +49,18 @@ done
 case "$1" in
   backup)
     mkdir -p $C
-    mount_system
-    check_prereq
+    check_blacklist system
     preserve_addon_d
     run_stage pre-backup
     run_stage backup
     run_stage post-backup
-    umount_system
   ;;
   restore)
-    mount_system
-    check_prereq
+    check_blacklist tmp
     run_stage pre-restore
     run_stage restore
     run_stage post-restore
     restore_addon_d
-    umount_system
     rm -rf $C
     sync
   ;;
