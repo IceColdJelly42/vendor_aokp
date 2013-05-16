@@ -1,3 +1,4 @@
 add_lunch_combo aokp_endeavoru-userdebug
 add_lunch_combo aokp_mako-userdebug
 add_lunch_combo aokp_galaxysmtd-userdebug
+add_lunch_combo aokp_m7-userdebug
