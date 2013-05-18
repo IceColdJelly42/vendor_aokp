@@ -84,6 +84,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Antimony.ogg \
     ro.config.alarm_alert=Scandium.ogg
 
+# Custom Packages
+PRODUCT_PACKAGES += \
+        Music \
+        CMFileManager \
+        CellBroadcastReceiver \
+        Apollo \
+        DSPManager \
+        libcyanogen-dsp \
+        audio_effects.conf \
+        JellyBlue_X
+
+# Bluetooth config
+PRODUCT_COPY_FILES += \
+    system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
+
 PRODUCT_COPY_FILES += packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
 # Inherit common build.prop overrides
