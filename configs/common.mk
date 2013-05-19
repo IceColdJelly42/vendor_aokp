@@ -69,7 +69,23 @@ PRODUCT_PACKAGES += \
     sshd-config \
     ssh-keygen \
     sftp \
-    scp
+    scp \
+    bash \
+    vim \
+    nano \
+    htop \
+    powertop \
+    lsof
+
+# Openssh
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
