@@ -1,13 +1,14 @@
+# Inherit device configuration
+$(call inherit-product, device/htc/m7/device_m7.mk)
+
+# Inherit AOKP common bits
+$(call inherit-product, vendor/aokp/configs/common.mk)
+
 # Specify phone tech before including full_phone
 $(call inherit-product, vendor/aokp/configs/gsm.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := m7
-
-$(call inherit-product, vendor/aokp/configs/common.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/htc/m7/device_m7.mk)
 
 # Device naming
 PRODUCT_DEVICE := m7
