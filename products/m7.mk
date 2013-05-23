@@ -23,3 +23,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_m7 BUILD_ID=JZO54K BUILD_FINGER
 
 PRODUCT_COPY_FILES += \
     vendor/aokp/prebuilt/bootanimation/bootanimation_1080_1920.zip:system/media/bootanimation-alt.zip
+
+# temp call audio fix 
+# source: https://github.com/romanbb/m7_call_audio_hack
+PRODUCT_PACKAGES += \
+    MSevenTempCallFix
