@@ -1,4 +1,4 @@
-add_lunch_combo aokp_endeavoru-userdebug
-add_lunch_combo aokp_mako-userdebug
-add_lunch_combo aokp_galaxysmtd-userdebug
-add_lunch_combo aokp_m7-userdebug
+add_lunch_combo icecold_endeavoru-userdebug
+add_lunch_combo icecold_mako-userdebug
+add_lunch_combo icecold_galaxysmtd-userdebug
+add_lunch_combo icecold_m7-userdebug
