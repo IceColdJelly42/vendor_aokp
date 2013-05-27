@@ -13,7 +13,7 @@ $(call inherit-product, vendor/aokp/configs/common_versions.mk)
 
 # Device naming
 PRODUCT_DEVICE := endeavoru
-PRODUCT_NAME := aokp_endeavoru
+PRODUCT_NAME := icecold_endeavoru
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := HTC One X
 PRODUCT_MANUFACTURER := HTC

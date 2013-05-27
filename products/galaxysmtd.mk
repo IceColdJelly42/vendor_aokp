@@ -11,7 +11,7 @@ $(call inherit-product, vendor/aokp/configs/gsm.mk)
 PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/galaxysmtd
 
 # Setup device specific product configuration
-PRODUCT_NAME := aokp_galaxysmtd
+PRODUCT_NAME := icecold_galaxysmtd
 PRODUCT_BRAND := samsung
 PRODUCT_DEVICE := galaxysmtd
 PRODUCT_MODEL := GT-I9000
