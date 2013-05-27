@@ -8,8 +8,8 @@ ifneq ($(AOKP_BUILD),)
     PRODUCT_PROPERTY_OVERRIDES += \
         ro.goo.developerid=aokp \
         ro.goo.rom=aokp \
-        ro.goo.version=$(shell echo $(AOKP_BUILD) | cut -d/ -f1) \
-        ro.icecold.version=$(TARGET_PRODUCT)_jb-mr1_$(shell echo $(AOKP_BUILD) | cut -d/ -f2)
+        ro.goo.version=$(shell echo $(ICECOLD_BUILD) | cut -d/ -f1) \
+        ro.icecold.version=$(TARGET_PRODUCT)_jb-mr1_$(shell echo $(ICECOLD_BUILD) | cut -d/ -f2)
 else
     ifneq ($(AOKP_NIGHTLY),)
         # AOKP_NIGHTLY=true
