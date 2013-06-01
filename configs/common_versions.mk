@@ -2,6 +2,7 @@
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_UTC_DATE=$(shell date +"%s")
 
 DATE = $(shell vendor/aokp/tools/getdate)
+AOKP_BRANCH=jb-mr1
 
 ifneq ($(AOKP_BUILD),)
     # AOKP_BUILD=<goo version int>/<build string>
@@ -9,7 +10,7 @@ ifneq ($(AOKP_BUILD),)
         ro.goo.developerid=aokp \
         ro.goo.rom=aokp \
         ro.goo.version=$(shell echo $(ICECOLD_BUILD) | cut -d/ -f1) \
-        ro.icecold.version=$(TARGET_PRODUCT)_jb-mr1_$(shell echo $(ICECOLD_BUILD) | cut -d/ -f2)
+        ro.icecold.version=$(TARGET_PRODUCT)_$(AOKP_BRANCH)_$(shell echo $(ICECOLD_BUILD) | cut -d/ -f2)
 else
     ifneq ($(AOKP_NIGHTLY),)
         # AOKP_NIGHTLY=true
@@ -20,6 +21,11 @@ else
         ro.icecold.version=$(TARGET_PRODUCT)_unofficial_$(DATE)
     endif
 endif
+
+# needed for statistics
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.aokp.branch=$(AOKP_BRANCH) \
+        ro.aokp.device=$(AOKP_PRODUCT)
 
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
