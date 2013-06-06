@@ -25,7 +25,7 @@ endif
 # needed for statistics
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.aokp.branch=$(AOKP_BRANCH) \
-        ro.aokp.device=$(AOKP_PRODUCT)
+        ro.aokp.device=$(ICECOLD_PRODUCT)
 
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
