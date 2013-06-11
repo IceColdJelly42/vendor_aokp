@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     XposedInstaller \
     XposedNetflixWorkaround \
-    XposedPerAppSettings 
+    XposedPerAppSettings \
+    HALO
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
