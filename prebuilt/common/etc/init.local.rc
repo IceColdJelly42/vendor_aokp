@@ -1,5 +1,8 @@
 # AOKP Extras
 
+on post-fs-data
+mkdir /data/.ssh 0750 root shell
+
 on boot
     # Run sysinit
     start sysinit
