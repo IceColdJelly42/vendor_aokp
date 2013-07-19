@@ -123,6 +123,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
+# SELinux filesystem labels
+PRODUCT_COPY_FILES += \
+    vendor/aokp/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+
 # Inherit common build.prop overrides
 -include vendor/aokp/configs/common_versions.mk
 
