@@ -93,6 +93,13 @@ PRODUCT_PACKAGES += \
     ssh-keygen \
     start-ssh
 
+# Optional CM packages
+PRODUCT_PACKAGES += \
+    VoicePlus \
+    VideoEditor \
+    VoiceDialer \
+    SoundRecorder \
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/aokp/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
